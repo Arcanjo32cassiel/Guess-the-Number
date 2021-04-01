@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* color: white; */
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+}
+
+.container {
+    /* https://www.playilottery.com/wp-content/uploads/2020/07/GettyImages-916223242.jpg */
+    background-image: url('https://images.unsplash.com/photo-1502570149819-b2260483d302?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8bnVtYmVyc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bgOpacity {
+    background-color: rgba(0, 0, 0, 0.363);
+    height: 100%;
+    width: 100%;
+}
+
+
+/* content */
+
+.content {
+    height: 40rem;
+    max-width: 66rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 5rem;
+    align-items: center;
+    /* z-index: 1; */
+    position: absolute;
+    text-align: center;
+}
+
+.content h1 {
+    color: white;
+    font-size: 3.8rem;
+}
+
+.content h2 {
+    font-size: 2.6rem;
+    color: white;
+    padding: .5rem;
+}
+
+.content h2 span {
+    color: red;
+}
+
+.content p {
+    color: white;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: .1rem;
+}
+
+.content p span {
+    color: #FF8A00;
+}
+
+.inputValueAndButtonToCheck {
+    max-height: 44rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* background-color: #fff; */
+    padding: .6rem;
+}
+
+.inputValueAndButtonToCheck form {
+    height: 13rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.inputValueAndButtonToCheck form input {
+    text-align: center;
+}
+
+.inputValueAndButtonToCheck form button,
+button {
+    max-width: 50%;
+    background: linear-gradient(90deg, #1F4EF7 0%, #1F4EF7 0.01%, #5902C8 99.99%, rgba(165, 213, 221, 0) 100%);
+    border: none;
+    padding: .8rem .5rem;
+    color: white;
+    font-weight: 700;
+    border-radius: 1.2rem;
+    cursor: pointer;
+}
+
+.inputValueAndButtonToCheck .reactionToResponse {
+    color: red;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    background-color: #f0f8ff65;
+    padding: .5rem;
+    border-radius: .3rem;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #1F211F;
+    width: 100%;
+    text-align: center;
+    padding: .8rem;
+}
+
+footer p {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: bold;
+}
+
+footer p span {
+    color: aqua;
+}
+
+.modalContainer.activeModal {
+    display: flex;
+    opacity: 1;
+}
+
+.modalContainer {
+    height: 60%;
+    width: 90%;
+    background-color: #effffdef;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    display: none;
+    opacity: 0;
+}
+
+.contentModal {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(15, 15, 15, 0.75);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentModal .mensagem {
+    font-size: 3.2rem;
+    color: white;
+    font-weight: 800;
+    text-align: center;
+}
+
+.hiddenMessage {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.fa-window-close {
+    font-size: 3rem;
+    cursor: pointer;
+    position: absolute;
+    left: 75%;
+    top: 5rem;
+    color: white;
+}
+
+.spanNumberBiggerOrSmaller {
+    color: white;
+}
+
+.numberAttempts {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    font-size: 2.6rem;
+}

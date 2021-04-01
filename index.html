@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./img/interrogation.svg" type="image/x-icon">
+    <title>Guess the number</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bgOpacity"></div>
+        <main class="content">
+            <h1>Adivinhe o número </h1>
+
+            <h2><span>OBS:</span> Você pode tentar apenas 3 vezes 😁</h2>
+
+            <P>Digite um número de <span>0</span> a <span>10</span></P>
+
+            <div class="inputValueAndButtonToCheck">
+                <div class="reactionToResponse">
+                    <span class="numberAttempts"></span>
+                    <div class="sugestionNumber"></div>
+                </div>
+                <form action="">
+                    <input type="text" name="" id="valueNumberSecret">
+                    <button id="buttonCheck">Verificar</button>
+                </form>
+
+            </div>
+
+        </main>
+        <div class="modalContainer ">
+            <!-- <i class="far fa-window-close"></i> -->
+            <div class="contentModal">
+                <span class="mensagem"></span>
+                <button id="generatenewnumber">Sortear um novo número</button>
+            </div>
+        </div>
+        <footer>
+            <p>By <span>Arcanjo Cassiel</span> </p>
+            <nav class="links">
+                <ul>
+                    <li>
+                        <a href="http://" target="_blank" "></a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+    <script src="./main.js "></script>
+</body>
+
+</html>
