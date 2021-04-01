@@ -140,6 +140,9 @@ footer {
     width: 100%;
     text-align: center;
     padding: .8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 footer p {
@@ -150,6 +153,33 @@ footer p {
 
 footer p span {
     color: aqua;
+}
+
+footer .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+footer .links ul {
+    display: flex;
+}
+
+footer .links li {
+    /* padding: .4rem; */
+    margin-left: 1rem;
+    transition: .4s;
+}
+
+footer .links li img {
+    width: 2rem;
+    height: 2rem;
+    /* border-radius: 2rem; */
+}
+
+footer .links li:hover img {
+    transform: scale(1.2);
 }
 
 .modalContainer.activeModal {
@@ -210,4 +240,16 @@ footer p span {
     color: #ffffff;
     text-decoration: underline;
     font-size: 2.2rem;
+}
+
+.punctuation {
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.punctuation span {
+    text-decoration: underline;
+    color: #f0a008;
+    font-weight: bold;
 }
