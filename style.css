@@ -108,6 +108,15 @@ body {
 
 .inputValueAndButtonToCheck form input {
     text-align: center;
+    text-decoration: none;
+    box-shadow: none;
+    border: 3px solid #adadad;
+    outline: none;
+    height: 3.5rem;
+    font-size: 2rem;
+    border-radius: .5rem;
+    background-color: #dbdbdb;
+    color: #5c5c5c;
 }
 
 .inputValueAndButtonToCheck form button,
