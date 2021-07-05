@@ -13,9 +13,16 @@ let punctuation = 0;
 let attempts = 3;
 let numberSecret;
 
+const phrases = [
+    ' "O Senhor, pois, é aquele que vai adiante de ti; ele será contigo, não te deixará, nem te desamparará; não temas, nem te espantes. Deuteronômio 31:8" ',
+    ' "Por isso não tema, pois estou com você; não tenha medo, pois sou o seu Deus. Eu o fortalecerei e o ajudarei; Eu o segurarei com a minha mão direita vitoriosa." Isaías 41:10 ',
+    ' "Resistam-lhe, permanecendo firmes na fé, sabendo que os irmãos que vocês têm em todo o mundo estão passando pelos mesmos sofrimentos." 1 Pedro 5:9 ',
+  ]
+
+const phrase = `${phrases[Math.floor(Math.random() * phrases.length)]}`
+
 function NewNumberSecret() {
     numberSecret = Math.floor(Math.random() * 11);
-
     return numberSecret;
 }
 NewNumberSecret();
@@ -27,36 +34,53 @@ function verificationNumber() {
         event.preventDefault();
 
         if (inputValue.value == numberSecret) {
-            modalContainer.classList.add("activeModal")
-            mensagem.innerHTML = `Acertou!! Parabéns 👏👏🥳 `;
-            elementPunctuation.innerHTML = ` A sua pontuação é <span> ${ punctuation += 1}</span>`
-
+            modalContainer.classList.add("activeModal");
+            mensagem.innerHTML = `Acertou!! Parabéns 👏👏🥳 
+            </br> </br> 
+            ${phrase}
+            </br> </br>
+            `;
+            elementPunctuation.innerHTML = ` Sua pontuação: <span> ${ punctuation += 1}</span>`
             if (attempts === 2) attempts = attempts - 1;
             else if (attempts === 1) attempts = attempts * 1;
             else if (attempts === 3) attempts = attempts - 2;
         } //=============
         else if (inputValue.value > numberSecret && attempts == 1 || inputValue.value < numberSecret && attempts == 1) {
             modalContainer.classList.add("activeModal")
-            mensagem.innerHTML = `acabou as tentativas 👋🤙. O número secreto era  ${numberSecret} `;
+            mensagem.innerHTML = `acabou as tentativas 👋🤙. O número secreto era  ${numberSecret} 
+            </br> </br> 
+            ${phrase}
+            </br> </br>
+            `;
+            
+
+            
             if (punctuation === 0) {
-                elementPunctuation.innerHTML = `A sua pontuação é  <span>${ punctuation}</span>`
+                elementPunctuation.innerHTML = `Sua pontuação: <span>${ punctuation}</span>`
             } else if (punctuation > 0) {
-                elementPunctuation.innerHTML = ` A sua pontuação é  <span>${ punctuation -= 1}</span>`
+                elementPunctuation.innerHTML = ` Sua pontuação: <span>${ punctuation -= 1}</span>`
             }
         } //=============
         else if (inputValue.value > numberSecret) {
-            sugestionNumber.innerHTML = `Número secreto é menor que <span class="spanNumberBiggerOrSmaller">${inputValue.value}</span>. Tente mais uma vez `;
+            sugestionNumber.innerHTML = `Número secreto é menor que <span class="spanNumberBiggerOrSmaller">${inputValue.value}</span>. `;
             sugestionNumber.classList.remove('hiddenMessage');
-            // sugestionNumber.innerHTML = tipsMessages.push(`Número secreto é menor que <span class="spanNumberBiggerOrSmaller">${inputValue.value}</span>. Tente mais uma vez `)
+            // sugestionNumber.innerHTML = tipsMessages.push(`Número secreto é menor que <span class="spanNumberBiggerOrSmaller">${inputValue.value}</span>. `)
             attempts = attempts - 1;
 
         } //=============
         else if (inputValue.value < numberSecret) {
-            sugestionNumber.innerHTML = `Número secreto é maior que  <span class="spanNumberBiggerOrSmaller">${inputValue.value}</span>. Tente mais uma vez  `;
+            sugestionNumber.innerHTML = `Número secreto é maior que  <span class="spanNumberBiggerOrSmaller">${inputValue.value}</span>.  `;
             sugestionNumber.classList.remove('hiddenMessage');
             attempts = attempts - 1;
         }
-        numberAttempts.innerHTML = `Agora você tem  apenas ${attempts} tentativas  😬 `;
+        if (attempts == 2) {
+            numberAttempts.innerHTML = `Agora você tem  apenas ${attempts} tentativas  😬 `;
+            console.log(attempts)
+        }
+        if (attempts == 1) {
+            numberAttempts.innerHTML = `Agora você tem  apenas ${attempts} tentativa 😬 `;
+            console.log(attempts)
+        }
     })
 
     numberAttempts.innerHTML = `Você tem ${attempts} tentativas 👍🏽`;
