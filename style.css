@@ -107,6 +107,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    /* position: ab; */
     /* padding: 3rem; */
 }
 
@@ -163,6 +164,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    bottom: 0;
 }
 
 footer p {
