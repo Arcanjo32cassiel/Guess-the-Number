@@ -97,6 +97,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     /* background-color: #fff; */
     padding: .6rem;
 }
@@ -111,7 +112,7 @@ body {
     /* padding: 3rem; */
 }
 
-.inputValueAndButtonToCheck form input {
+.inputValueAndButtonToCheck input {
     text-align: center;
     text-decoration: none;
     box-shadow: none;
@@ -164,7 +165,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: absolute;
     bottom: 0;
 }
 
