@@ -40,8 +40,8 @@ body {
 /* content */
 
 .content {
-    height: 48rem;
-    max-width: 66rem;
+    /* height: 48rem;
+    max-width: 66rem; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -165,8 +165,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
 }
 
 footer p {
