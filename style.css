@@ -54,7 +54,7 @@ body {
 
 .content h1 {
     color: white;
-    font-size: 3.8rem;
+    font-size: clamp(3.5rem, 4vw, 5rem);
 }
 
 .content h2 {
@@ -80,9 +80,11 @@ body {
 
 .content p {
     color: white;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    /* font-size: 2rem; */
     font-weight: 900;
     letter-spacing: .1rem;
+    padding: 1rem;
 }
 
 .content p span {
@@ -90,7 +92,8 @@ body {
 }
 
 .inputValueAndButtonToCheck {
-    max-height: 44rem;
+    max-height: 38rem;
+    height: 24rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -99,11 +102,12 @@ body {
 }
 
 .inputValueAndButtonToCheck form {
-    height: 13rem;
+    height: 9rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    /* padding: 3rem; */
 }
 
 .inputValueAndButtonToCheck form input {
@@ -113,6 +117,8 @@ body {
     border: 3px solid #adadad;
     outline: none;
     height: 3.5rem;
+    min-width: 10rem;
+    width: 15rem;
     font-size: 2rem;
     border-radius: .5rem;
     background-color: #dbdbdb;
@@ -121,6 +127,7 @@ body {
 
 .inputValueAndButtonToCheck form button,
 button {
+    width: 10rem;
     max-width: 50%;
     background: linear-gradient(90deg, #1F4EF7 0%, #1F4EF7 0.01%, #5902C8 99.99%, rgba(165, 213, 221, 0) 100%);
     border: none;
@@ -141,6 +148,10 @@ button {
     border-radius: .3rem;
 }
 
+.inputValueAndButtonToCheck .reactionToResponse .numberAttempts {
+    font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+}
+
 
 /* Footer */
 
@@ -155,7 +166,7 @@ footer {
 }
 
 footer p {
-    font-size: 1.6rem;
+    font-size: clamp(1rem, 2.5vw, 2rem);
     color: white;
     font-weight: bold;
 }
@@ -220,10 +231,24 @@ footer .links li:hover img {
 }
 
 .contentModal .mensagem {
-    font-size: 3.2rem;
+    /* font-size: 3.2rem; */
+    font-size: clamp(1rem, 2.5vw, 2rem);
     color: white;
     font-weight: 800;
     text-align: center;
+}
+
+.contentModal .mensage_strong {
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    color: white;
+    font-weight: 800;
+    text-align: center;
+    padding: .8rem;
+}
+
+.contentModal #generatenewnumber {
+    width: 20rem;
+    font-size: clamp(1rem, 2.5vw, 2rem);
 }
 
 .hiddenMessage {
