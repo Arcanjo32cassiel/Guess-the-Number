@@ -13,40 +13,29 @@
 
 <body>
     <div class="container">
-        <div class="bgOpacity"></div>
+        <!-- <div class="bgOpacity"></div> -->
         <main class="content">
             <h1>Mentalista</h1>
-            <span class="alura"> Terceiro desafio da ImersãoDev da   <a href="https://www.alura.com.br/" target="_blanck">Alura</a></span>
-            <!-- <h2><span>OBS:</span> Você pode tentar apenas 3 vezes </h2> -->
-
+            <p class="question_challenge"> Você consegue adivenhar o número secreto?</p>
             <P>Digite um número maior ou igual a <span>0</span> ou menor ou igual a <span>10</span>
-                <!-- <br> -->
-                <!-- O número pode ser >= 0 ou <=10 -->
+
             </P>
             <div class="punctuation"></div>
             <div class="inputValueAndButtonToCheck">
                 <div class="reactionToResponse">
                     <span class="numberAttempts"></span>
                     <div class="sugestionNumber"></div>
-
                 </div>
 
-                <!-- <form action=""> -->
-                <input id="valueNumberSecret" placeholder="Número">
-                <button id="buttonCheck">Verificar</button>
-                <!-- </form> -->
+                <form action="">
+                    <input type="number" id="valueNumberSecret" placeholder="Número">
+                    <button id="buttonCheck">Verificar</button>
+                </form>
 
             </div>
 
         </main>
-        <div class="modalContainer ">
-            <!-- <i class="far fa-window-close"></i> -->
-            <div class="contentModal">
-                <span class="mensagem"></span>
-                <p class="mensage_strong"></p>
-                <button id="generatenewnumber">Sortear um novo número</button>
-            </div>
-        </div>
+
         <footer>
             <p>Desenvolvido por <span>Arcanjo Cassiel</span> </p>
             <nav class="links">
@@ -63,6 +52,14 @@
                 </ul>
             </nav>
         </footer>
+        <div class="modalContainer ">
+            <!-- <i class="far fa-window-close"></i> -->
+            <div class="contentModal">
+                <span class="mensagem"></span>
+                <p class="mensage_strong"></p>
+                <button id="generatenewnumber">Sortear um novo número</button>
+            </div>
+        </div>
     </div>
 
     <script src="./main.js "></script>
