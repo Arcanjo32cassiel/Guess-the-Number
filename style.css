@@ -1,297 +1,298 @@
             @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,700&display=swap');
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            /* color: white; */
-            list-style: none;
-            text-decoration: none;
-        }
-        
-        html {
-            font-family: 'Roboto', sans-serif;
-            font-size: 62.5%;
-            height: 100vh;
-        }
-        
-        body {
-            height: 100vh;
-        }
-        
-        .container {
-            /* https://www.playilottery.com/wp-content/uploads/2020/07/GettyImages-916223242.jpg */
-            background-image: linear-gradient(to bottom, rgba(48, 48, 47, 0.5), rgba(12, 12, 141, 0.5)), url('https://images.unsplash.com/photo-1502570149819-b2260483d302?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8bnVtYmVyc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
-            /* background-image: linear-gradient(to bottom, rgba(255, 255, 0, 0.5), rgba(0, 0, 255, 0.5)), url('https://images.unsplash.com/photo-1594778562795-36fa9927dbfc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'); */
-            /* background-image: url('https://images.hdqwalls.com/wallpapers/thumb/3d-graphic-ball-4k-y0.jpg'), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)); */
-            background-position: center;
-            background-color: #000000;
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-        }
-        /* content */
-        
-        .content {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            /* margin-top: 5rem; */
-            align-items: center;
-            height: 100vh;
-        }
-        
-        .content h1 {
-            color: white;
-            font-size: clamp(3.5rem, 4vw, 5rem);
-        }
-        
-        .content h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: white;
-            padding: .5rem;
-        }
-        
-        .content h2 span {
-            color: red;
-        }
-        
-        .content .alura {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .content .alura a {
-            color: #138dc5;
-            font-weight: bold;
-        }
-        
-        .content p {
-            color: white;
-            font-size: clamp(1.8rem, 2.5vw, 2.5rem);
-            /* font-size: 2rem; */
-            font-weight: 900;
-            letter-spacing: .1rem;
-            padding: 1rem;
-            text-align: center;
-        }
-        
-        .content p span {
-            color: #FF8A00;
-        }
-        
-        .inputValueAndButtonToCheck {
-            max-height: 38rem;
-            height: 24rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-            /* background-color: #fff; */
-            padding: .6rem;
-        }
-        
-        .inputValueAndButtonToCheck form {
-            height: 9rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-            /* position: ab; */
-            /* padding: 3rem; */
-        }
-        
-        .inputValueAndButtonToCheck input {
-            text-align: center;
-            text-decoration: none;
-            box-shadow: none;
-            border: 3px solid #adadad;
-            outline: none;
-            height: 3.5rem;
-            min-width: 10rem;
-            width: 15rem;
-            font-size: 2rem;
-            border-radius: .5rem;
-            background-color: #dbdbdb;
-            color: #5c5c5c;
-        }
-        
-        .inputValueAndButtonToCheck form button,
-        button {
-            width: 10rem;
-            max-width: 50%;
-            background: linear-gradient(90deg, #1F4EF7 0%, #1F4EF7 0.01%, #5902C8 99.99%, rgba(165, 213, 221, 0) 100%);
-            border: none;
-            padding: .8rem .5rem;
-            color: white;
-            font-weight: 700;
-            border-radius: 1.2rem;
-            cursor: pointer;
-        }
-        
-        .inputValueAndButtonToCheck .reactionToResponse {
-            color: red;
-            font-size: 1.6rem;
-            font-weight: 700;
-            letter-spacing: .2rem;
-            background-color: #f0f8ff65;
-            padding: .5rem;
-            border-radius: .3rem;
-            text-align: center;
-        }
-        
-        .inputValueAndButtonToCheck .reactionToResponse .numberAttempts {
-            font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-        }
-        /* Footer */
-        
-        footer {
-            background-color: #1F211F;
-            width: 100%;
-            text-align: center;
-            padding: .8rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* position: absolute;
-    bottom: 0; */
-        }
-        
-        footer p {
-            font-size: clamp(1.3rem, 2.5vw, 2rem);
-            color: white;
-            font-weight: bold;
-        }
-        
-        footer p span {
-            color: aqua;
-        }
-        
-        footer .links {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-        }
-        
-        footer .links ul {
-            display: flex;
-        }
-        
-        footer .links li {
-            /* padding: .4rem; */
-            margin-left: 1rem;
-            transition: .4s;
-        }
-        
-        footer .links li img {
-            width: 2rem;
-            height: 2rem;
-            /* border-radius: 2rem; */
-        }
-        
-        footer .links li:hover img {
-            transform: scale(1.2);
-        }
-        
-        .modalContainer.activeModal {
-            display: flex;
-            opacity: 1;
-        }
-        
-        .modalContainer {
-            height: 60%;
-            width: 90%;
-            background-color: #effffdef;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            padding: 1rem;
-            display: none;
-            opacity: 0;
-        }
-        
-        .contentModal {
-            height: 100%;
-            width: 100%;
-            background-color: rgba(15, 15, 15, 0.75);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .contentModal .mensagem {
-            /* font-size: 3.2rem; */
-            font-size: clamp(1.5rem, 2.5vw, 2rem);
-            color: white;
-            font-weight: 800;
-            text-align: center;
-        }
-        
-        .contentModal .mensage_strong {
-            font-size: clamp(1.7em, 2.5vw, 2rem);
-            color: white;
-            font-weight: 800;
-            text-align: center;
-            padding: .8rem;
-        }
-        
-        .contentModal #generatenewnumber {
-            width: 20rem;
-            font-size: clamp(1rem, 2.5vw, 2rem);
-        }
-        
-        .hiddenMessage {
-            display: none;
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        .fa-window-close {
-            font-size: 3rem;
-            cursor: pointer;
-            position: absolute;
-            left: 75%;
-            top: 5rem;
-            color: white;
-        }
-        
-        .spanNumberBiggerOrSmaller {
-            color: white;
-        }
-        
-        .numberAttempts {
-            color: #ffffff;
-            text-decoration: underline;
-            font-size: 2.2rem;
-        }
-        
-        .punctuation {
-            font-size: 2rem;
-            color: #ffffff;
-            font-weight: 600;
-        }
-        
-        .punctuation span {
-            text-decoration: underline;
-            color: #f0a008;
-            font-weight: bold;
-        }
-        /* media query */
-        
-        @media (max-width: 500px) {
-            .inputValueAndButtonToCheck form {
-                display: flex;
-                flex-direction: row;
-                max-width: 30rem;
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                /* color: white; */
+                list-style: none;
+                text-decoration: none;
             }
-            #valueNumberSecret,
-            #buttonCheck {
-                margin: .5rem;
+            
+            html {
+                font-family: 'Roboto', sans-serif;
+                font-size: 62.5%;
+                height: 100vh;
+            }
+            
+            body {
+                height: 100vh;
+            }
+            
+            .container {
+                /* https://www.playilottery.com/wp-content/uploads/2020/07/GettyImages-916223242.jpg */
+                background-image: linear-gradient(to bottom, rgba(48, 48, 47, 0.5), rgba(12, 12, 141, 0.5)), url('https://images.unsplash.com/photo-1502570149819-b2260483d302?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8bnVtYmVyc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+                /* background-image: linear-gradient(to bottom, rgba(255, 255, 0, 0.5), rgba(0, 0, 255, 0.5)), url('https://images.unsplash.com/photo-1594778562795-36fa9927dbfc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'); */
+                /* background-image: url('https://images.hdqwalls.com/wallpapers/thumb/3d-graphic-ball-4k-y0.jpg'), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)); */
+                background-position: center;
+                background-color: #000000;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+            /* content */
+            
+            .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                /* margin-top: 5rem; */
+                align-items: center;
+                height: 100vh;
+            }
+            
+            .content h1 {
+                color: white;
+                font-size: clamp(3.5rem, 4vw, 5rem);
+            }
+            
+            .content h2 {
+                font-size: clamp(2rem, 4vw, 3rem);
+                color: white;
+                padding: .5rem;
+            }
+            
+            .content h2 span {
+                color: red;
+            }
+            
+            .content .alura {
+                color: white;
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+            
+            .content .alura a {
+                color: #138dc5;
+                font-weight: bold;
+            }
+            
+            .content p {
+                color: white;
+                font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+                /* font-size: 2rem; */
+                font-weight: 900;
+                letter-spacing: .1rem;
+                padding: 1rem;
+                text-align: center;
+            }
+            
+            .content p span {
+                color: #FF8A00;
+            }
+            
+            .inputValueAndButtonToCheck {
+                max-height: 38rem;
+                height: 24rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                /* background-color: #fff; */
+                padding: .6rem;
+            }
+            
+            .inputValueAndButtonToCheck form {
+                height: 9rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                /* position: ab; */
+                /* padding: 3rem; */
+            }
+            
+            .inputValueAndButtonToCheck input {
+                text-align: center;
+                text-decoration: none;
+                box-shadow: none;
+                border: 3px solid #adadad;
+                outline: none;
+                height: 3.5rem;
+                min-width: 10rem;
+                width: 15rem;
+                font-size: 2rem;
+                border-radius: .5rem;
+                background-color: #dbdbdb;
+                color: #5c5c5c;
+            }
+            
+            .inputValueAndButtonToCheck form button,
+            button {
+                width: 10rem;
+                max-width: 50%;
+                background: linear-gradient(90deg, #1F4EF7 0%, #1F4EF7 0.01%, #5902C8 99.99%, rgba(165, 213, 221, 0) 100%);
+                border: none;
+                padding: .8rem .5rem;
+                color: white;
+                font-weight: 700;
+                border-radius: 1.2rem;
+                cursor: pointer;
+            }
+            
+            .inputValueAndButtonToCheck .reactionToResponse {
+                color: red;
+                font-size: 1.6rem;
+                font-weight: 700;
+                letter-spacing: .2rem;
+                background-color: #f0f8ff65;
+                padding: .5rem;
+                border-radius: .3rem;
+                text-align: center;
+            }
+            
+            .inputValueAndButtonToCheck .reactionToResponse .numberAttempts {
+                font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+            }
+            /* Footer */
+            
+            footer {
+                background-color: #1F211F;
+                width: 100%;
+                text-align: center;
+                padding: .8rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* position: absolute;
+    bottom: 0; */
+            }
+            
+            footer p {
+                font-size: clamp(1.3rem, 2.5vw, 2rem);
+                color: white;
+                font-weight: bold;
+            }
+            
+            footer p span {
+                color: aqua;
+            }
+            
+            footer .links {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem;
+            }
+            
+            footer .links ul {
+                display: flex;
+            }
+            
+            footer .links li {
+                /* padding: .4rem; */
+                margin-left: 1rem;
+                transition: .4s;
+            }
+            
+            footer .links li img {
+                width: 2rem;
+                height: 2rem;
+                /* border-radius: 2rem; */
+            }
+            
+            footer .links li:hover img {
+                transform: scale(1.2);
+            }
+            
+            .modalContainer.activeModal {
+                display: flex;
+                opacity: 1;
+            }
+            
+            .modalContainer {
+                height: 60%;
+                width: 90%;
+                background-color: #effffdef;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                padding: 1rem;
+                display: none;
+                opacity: 0;
+            }
+            
+            .contentModal {
+                height: 100%;
+                width: 100%;
+                background-color: rgba(15, 15, 15, 0.75);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .contentModal .mensagem {
+                /* font-size: 3.2rem; */
+                font-size: clamp(1.5rem, 2.5vw, 2rem);
+                color: white;
+                font-weight: 800;
+                text-align: center;
+            }
+            
+            .contentModal .mensage_strong {
+                font-size: clamp(1.7em, 2.5vw, 2rem);
+                color: white;
+                font-weight: 800;
+                text-align: center;
+                padding: .8rem;
+            }
+            
+            .contentModal #generatenewnumber {
+                width: 20rem;
+                font-size: clamp(1rem, 2.5vw, 2rem);
+            }
+            
+            .hiddenMessage {
+                display: none;
+                opacity: 0;
+                visibility: hidden;
+            }
+            
+            .fa-window-close {
+                font-size: 3rem;
+                cursor: pointer;
+                position: absolute;
+                left: 75%;
+                top: 5rem;
+                color: white;
+            }
+            
+            .spanNumberBiggerOrSmaller {
+                color: white;
+            }
+            
+            .numberAttempts {
+                color: #ffffff;
+                text-decoration: underline;
+                font-size: 2.2rem;
+            }
+            
+            .punctuation {
+                font-size: 2rem;
+                color: #ffffff;
+                font-weight: 600;
+            }
+            
+            .punctuation span {
+                text-decoration: underline;
+                color: #f0a008;
+                font-weight: bold;
+            }
+            /* media query */
+            
+            @media (max-width: 500px) {
+                .inputValueAndButtonToCheck form {
+                    display: flex;
+                    flex-direction: row;
+                    max-width: 30rem;
+                }
+                #valueNumberSecret,
+                #buttonCheck {
+                    margin: .5rem;
+                }
             }
