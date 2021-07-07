@@ -4,7 +4,6 @@ const generateNewNumber = document.querySelector('#generatenewnumber');
 const modalContainer = document.querySelector('.modalContainer');
 const mensagem = document.querySelector('.mensagem');
 const mensage_strong = document.querySelector('.mensage_strong');
-// const windowClose = document.querySelector('.fa-window-close');
 const reactionToResponse = document.querySelector('.reactionToResponse');
 const sugestionNumber = document.querySelector('.sugestionNumber');
 const numberAttempts = document.querySelector('.numberAttempts');
@@ -24,6 +23,7 @@ const phrasesPersist = [
 ]
 const phraseAcert = `${phrasesAcert[Math.floor(Math.random() * phrasesAcert.length)]}`;
 const phrasePersist = `${phrasesPersist[Math.floor(Math.random() * phrasesPersist.length)]}`;
+
 function NewNumberSecret() {
     numberSecret = Math.floor(Math.random() * 11);
     return numberSecret;
@@ -33,15 +33,15 @@ NewNumberSecret();
 function getLocalStorage(){
     let pontuation_update =  localStorage.getItem('pontuação');
     elementPunctuation.innerHTML = ` Sua pontuação: <span> ${ pontuation_update}</span>`;
-     
-   
   }
-
+function clearInput(){
+    inputValue.value =''
+}
 
 function verificationNumber() {
     buttonCheck.addEventListener('click', (event) => {
         event.preventDefault();
-
+        
         if (inputValue.value == numberSecret) {
             modalContainer.classList.add("activeModal");
             mensagem.innerHTML = `Acertou!! Parabéns 👏👏🥳 `;
@@ -93,17 +93,14 @@ function verificationNumber() {
             numberAttempts.innerHTML = `Agora você tem  apenas ${attempts} chance 😬 `;
             console.log(attempts)
         }
+        clearInput();
     })
 
     numberAttempts.innerHTML = `Você tem ${attempts} chances 👍🏽`;
 }
 verificationNumber()
 
-// windowClose.addEventListener('click', () => {
-//     modalContainer.classList.remove("activeModal")
-// })
 
-// New Number Secret
 generateNewNumber.addEventListener('click', () => {
     modalContainer.classList.remove("activeModal")
     sugestionNumber.classList.add('hiddenMessage');
@@ -111,4 +108,5 @@ generateNewNumber.addEventListener('click', () => {
     numberAttempts.innerHTML = `Você tem ${attempts} tentativas 👍🏽`
     buttonCheck.style.display = "block";
     NewNumberSecret();
+    clearInput();
 })
