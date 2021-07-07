@@ -14,20 +14,28 @@ let punctuation = 0;
 let attempts = 3;
 let numberSecret;
 
-const phrases = [
+window.addEventListener('load', getLocalStorage())
+const phrasesAcert = [
     ' "O Senhor, pois, é aquele que vai adiante de ti; ele será contigo, não te deixará, nem te desamparará; não temas, nem te espantes." Deuteronômio 31:8 ',
     ' "Por isso não tema, pois estou com você; não tenha medo, pois sou o seu Deus. Eu o fortalecerei e o ajudarei; Eu o segurarei com a minha mão direita vitoriosa." Isaías 41:10 ',
-    ' "Resistam-lhe, permanecendo firmes na fé, sabendo que os irmãos que vocês têm em todo o mundo estão passando pelos mesmos sofrimentos." 1 Pedro 5:9 ',
   ]
-
-const phrase = `${phrases[Math.floor(Math.random() * phrases.length)]}`
-
+const phrasesPersist = [
+    ' "Resistam-lhe, permanecendo firmes na fé, sabendo que os irmãos que vocês têm em todo o mundo estão passando pelos mesmos sofrimentos." 1 Pedro 5:9 ',
+]
+const phraseAcert = `${phrasesAcert[Math.floor(Math.random() * phrasesAcert.length)]}`;
+const phrasePersist = `${phrasesPersist[Math.floor(Math.random() * phrasesPersist.length)]}`;
 function NewNumberSecret() {
     numberSecret = Math.floor(Math.random() * 11);
     return numberSecret;
 }
 NewNumberSecret();
 
+function getLocalStorage(){
+    let pontuation_update =  localStorage.getItem('pontuação');
+    elementPunctuation.innerHTML = ` Sua pontuação: <span> ${ pontuation_update}</span>`;
+     
+   
+  }
 
 
 function verificationNumber() {
@@ -39,12 +47,12 @@ function verificationNumber() {
             mensagem.innerHTML = `Acertou!! Parabéns 👏👏🥳 `;
             mensage_strong.innerHTML = ` 
             </br> </br> 
-            ${phrase}
+            ${phraseAcert}
             </br> </br>
             `;
             elementPunctuation.innerHTML = ` Sua pontuação: <span> ${ punctuation += 1}</span>`;
             buttonCheck.style.display = "none";
-            
+            localStorage.setItem('pontuação', `${ punctuation}`)
             if (attempts === 2) attempts = attempts - 1;
             else if (attempts === 1) attempts = attempts * 1;
             else if (attempts === 3) attempts = attempts - 2;
@@ -54,7 +62,7 @@ function verificationNumber() {
             mensagem.innerHTML = `acabou as tentativas 👋🤙. O número secreto era  ${numberSecret} `;
             mensage_strong.innerHTML = ` 
             </br> </br> 
-            ${phrase}
+            ${phrasePersist}
             </br> </br> `
             buttonCheck.style.display = "none";
             
@@ -62,6 +70,7 @@ function verificationNumber() {
                 elementPunctuation.innerHTML = `Sua pontuação: <span>${ punctuation}</span>`
             } else if (punctuation > 0) {
                 elementPunctuation.innerHTML = ` Sua pontuação: <span>${ punctuation -= 1}</span>`
+                localStorage.setItem('pontuação', `${ punctuation}`)
             }
         } //=============
         else if (inputValue.value > numberSecret) {
