@@ -9,18 +9,22 @@ const sugestionNumber = document.querySelector('.sugestionNumber');
 const numberAttempts = document.querySelector('.numberAttempts');
 const elementPunctuation = document.querySelector('.punctuation');
 
-// let punctuation = 0;
 let attempts = 3;
 let numberSecret;
 
 window.addEventListener('load', getLocalStorage())
-const phrasesAcert = [
+const phrasesAcert = [ //https://www.bibliaon.com/transformacao/
     ' "O Senhor, pois, é aquele que vai adiante de ti; ele será contigo, não te deixará, nem te desamparará; não temas, nem te espantes." Deuteronômio 31:8 ',
     ' "Por isso não tema, pois estou com você; não tenha medo, pois sou o seu Deus. Eu o fortalecerei e o ajudarei; Eu o segurarei com a minha mão direita vitoriosa." Isaías 41:10 ',
-  ]
-const phrasesPersist = [
+    ' "Não se amoldem ao padrão deste mundo, mas transformem-se pela renovação da sua mente, para que sejam capazes de experimentar e comprovar a boa, agradável e perfeita vontade de Deus." Romanos 12:2',
+    ' "Não por causa de atos de justiça por nós praticados, mas devido à sua misericórdia, ele nos salvou pelo lavar regenerador e renovador do Espírito Santo,"Tito 3:5',
+    ' "Nenhuma palavra torpe saia da boca de vocês, mas apenas a que for útil para edificar os outros, conforme a necessidade, para que conceda graça aos que a ouvem."Efésios 4:29',
+    
+]
+const phrasesPersist = [//https://www.bibliaon.com/versiculos_encorajamento/
     ' "Resistam-lhe, permanecendo firmes na fé, sabendo que os irmãos que vocês têm em todo o mundo estão passando pelos mesmos sofrimentos." 1 Pedro 5:9 ',
 ]
+
 const phraseAcert = `${phrasesAcert[Math.floor(Math.random() * phrasesAcert.length)]}`;
 const phrasePersist = `${phrasesPersist[Math.floor(Math.random() * phrasesPersist.length)]}`;
 
@@ -67,7 +71,6 @@ function verificationNumber() {
             </br> </br> `
             buttonCheck.style.display = "none";
             
-            // localStorage.setItem('pontuação', `${ punctuation}`)
             if (points === 0) {
                 elementPunctuation.innerHTML = `Sua pontuação: <span>${ points}</span>`;
                 localStorage.setItem('pontuação', `${ points}`)
