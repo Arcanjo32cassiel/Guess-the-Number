@@ -9,7 +9,7 @@ const sugestionNumber = document.querySelector('.sugestionNumber');
 const numberAttempts = document.querySelector('.numberAttempts');
 const elementPunctuation = document.querySelector('.punctuation');
 
-let punctuation = 0;
+// let punctuation = 0;
 let attempts = 3;
 let numberSecret;
 
@@ -41,7 +41,8 @@ function clearInput(){
 function verificationNumber() {
     buttonCheck.addEventListener('click', (event) => {
         event.preventDefault();
-        
+        let points= parseInt(localStorage.getItem('pontuação'))
+        console.log(points)
         if (inputValue.value == numberSecret) {
             modalContainer.classList.add("activeModal");
             mensagem.innerHTML = `Acertou!! Parabéns 👏👏🥳 `;
@@ -50,9 +51,9 @@ function verificationNumber() {
             ${phraseAcert}
             </br> </br>
             `;
-            elementPunctuation.innerHTML = ` Sua pontuação: <span> ${ punctuation += 1}</span>`;
+            elementPunctuation.innerHTML = ` Sua pontuação: <span> ${points = points + 1}</span>`;
             buttonCheck.style.display = "none";
-            localStorage.setItem('pontuação', `${ punctuation}`)
+            localStorage.setItem('pontuação', `${ points  }`)
             if (attempts === 2) attempts = attempts - 1;
             else if (attempts === 1) attempts = attempts * 1;
             else if (attempts === 3) attempts = attempts - 2;
@@ -66,11 +67,13 @@ function verificationNumber() {
             </br> </br> `
             buttonCheck.style.display = "none";
             
-            if (punctuation === 0) {
-                elementPunctuation.innerHTML = `Sua pontuação: <span>${ punctuation}</span>`
-            } else if (punctuation > 0) {
-                elementPunctuation.innerHTML = ` Sua pontuação: <span>${ punctuation -= 1}</span>`
-                localStorage.setItem('pontuação', `${ punctuation}`)
+            // localStorage.setItem('pontuação', `${ punctuation}`)
+            if (points === 0) {
+                elementPunctuation.innerHTML = `Sua pontuação: <span>${ points}</span>`;
+                localStorage.setItem('pontuação', `${ points}`)
+            } else if (points > 0) {
+                elementPunctuation.innerHTML = ` Sua pontuação: <span>${ points -= 1}</span>`
+                localStorage.setItem('pontuação', `${ points }`)
             }
         } //=============
         else if (inputValue.value > numberSecret) {
