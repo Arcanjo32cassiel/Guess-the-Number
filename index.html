@@ -17,22 +17,21 @@
         <main class="content">
             <h1>Mentalista</h1>
             <p class="question_challenge"> Você consegue adivinhar o número secreto?</p>
-            <P>Digite um número maior ou igual a <span>0</span> ou menor ou igual a <span>10</span>
+            <p class="reward">Adivinhe o número e receba um versiculo Bíblico</p>
+            <!-- <P>Digite um número maior ou igual a <span>0</span> ou menor ou igual a <span>10</span> -->
 
             </P>
             <div class="punctuation"></div>
-            <div class="inputValueAndButtonToCheck">
-                <div class="reactionToResponse">
-                    <span class="numberAttempts"></span>
-                    <div class="sugestionNumber"></div>
+
+            <section class="levels">
+                <p class="choosing_a_level">Escolha um nível para enbarcar</p>
+
+                <div class="levels_childs">
+                    <div class="first_level level" data-level="10"> 0 - 10</div>
+                    <div class="first_level level" data-level="50"> 0 - 50</div>
+                    <div class="first_level level" data-level="100"> 0 - 100</div>
                 </div>
-
-                <form action="">
-                    <input type="number" id="valueNumberSecret" placeholder="Número">
-                    <button id="buttonCheck">Verificar</button>
-                </form>
-
-            </div>
+            </section>
 
         </main>
 
@@ -53,11 +52,31 @@
             </nav>
         </footer>
         <div class="modalContainer ">
+            <div class="modal_insertnumber">
+                <div class="punctuation"></div>
+                <div class="inputValueAndButtonToCheck">
+
+                    <div class="reactionToResponse">
+                        <span class="numberAttempts"></span>
+                        <div class="sugestionNumber"></div>
+                    </div>
+
+                    <form action="">
+                        <input type="number" id="valueNumberSecret" placeholder="Número">
+                        <button id="buttonCheck">Verificar</button>
+                    </form>
+
+                </div>
+            </div>
             <!-- <i class="far fa-window-close"></i> -->
-            <div class="contentModal">
+            <div class="modal_Result">
                 <span class="mensagem"></span>
                 <p class="mensage_strong"></p>
-                <button id="generatenewnumber">Sortear um novo número</button>
+
+                <div class="buttons">
+                    <button id="continue_at_this_level">Continuar neste nivel</button>
+                    <button id="generatenewnumber">Sortear um novo número</button>
+                </div>
             </div>
         </div>
     </div>
