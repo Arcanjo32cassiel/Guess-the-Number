@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,700&display=swap');
+:root {
+    --cor-bgmodal: linear-gradient(90deg, #1F4EF7 0%, #1F4EF7 0.01%, #5902C8 99.99%, rgba(165, 213, 221, 0) 100%);
+    --cor-bxshadowbtn: linear-gradient(90deg, #8298e7 0%, #e0e4f5 0.01%, #027fc8 99.99%, #1b52a3a9 100%);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -111,28 +116,33 @@ body {
     text-align: center;
     text-decoration: none;
     box-shadow: none;
-    border: 3px solid #adadad;
+    border: 3px solid #0b63c9;
     outline: none;
     height: 3.5rem;
-    min-width: 10rem;
-    width: 15rem;
+    /* min-width: 10rem; */
+    width: 100%;
     font-size: 2rem;
     border-radius: .5rem;
-    background-color: #dbdbdb;
-    color: #5c5c5c;
+    background-color: #dce5e9;
+    color: #070707;
 }
 
 .inputValueAndButtonToCheck form button,
 button {
     width: 10rem;
     max-width: 50%;
-    background: linear-gradient(90deg, #1F4EF7 0%, #1F4EF7 0.01%, #5902C8 99.99%, rgba(165, 213, 221, 0) 100%);
+    background: var(--cor-bgmodal);
     border: none;
     padding: .8rem .5rem;
     color: white;
     font-weight: 700;
     border-radius: 1.2rem;
     cursor: pointer;
+    box-shadow: 0px 0px 0px 3px #5390d6;
+}
+
+.inputValueAndButtonToCheck form button {
+    max-width: 75%;
 }
 
 .inputValueAndButtonToCheck .reactionToResponse {
@@ -198,6 +208,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     /* position: absolute;
     bottom: 0; */
 }
@@ -282,7 +293,7 @@ footer .links li:hover img {
     display: none;
     z-index: 3;
     width: 30rem;
-    height: 33rem;
+    min-height: 33rem;
     background-image: linear-gradient(50deg, rgb(47, 13, 236) 0%, rgb(52, 31, 245) 0.01%, rgb(118, 27, 236) 99.99%, rgba(180, 213, 219, 0) 100%);
     position: absolute;
     width: 100%;
@@ -314,10 +325,12 @@ footer .links li:hover img {
 
 .modal_Result #generatenewnumber,
 .modal_Result #continue_at_this_level {
-    width: 13rem;
+    min-width: 11rem;
+    width: 25rem;
     height: 6rem;
     text-align: center;
-    font-size: clamp(1.5rem, 2vw, 5rem);
+    font-size: clamp(1rem, 2vw, 2rem);
+    margin: 0 0.5rem 1rem 0;
 }
 
 .hiddenMessage {
@@ -360,7 +373,8 @@ footer .links li:hover img {
 
 /* media query */
 
-@media (max-width: 500px) {
+
+/* @media (max-width: 500px) {
     .inputValueAndButtonToCheck form {
         display: flex;
         flex-direction: row;
@@ -370,4 +384,4 @@ footer .links li:hover img {
     #buttonCheck {
         margin: .5rem;
     }
-}
+} */
