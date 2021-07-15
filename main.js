@@ -202,7 +202,7 @@ function verificationLevel(level) {
   }
 }
 function hiddenMessagePontuation(){
-  if( parseInt(pontuation_update) === 0){
+  if( parseInt(pontuation_update) === 0  || parseInt(pontuation_update) === NaN){
     console.log(pontuation_update)
     elementPunctuation.classList.add('hiddenMessage')
   }
