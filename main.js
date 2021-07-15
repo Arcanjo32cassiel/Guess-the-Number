@@ -20,7 +20,8 @@ let attempts;
 let numSecret;
 let qtdNumbers;
 let level;
-
+let points;
+let pontuation_update;
 window.addEventListener("load", getLocalStorage());
 
 const phrasesAcert = [
@@ -82,7 +83,7 @@ function numberSecret(qtdNumbers) {
 }
 
 function getLocalStorage() {
-  let pontuation_update = localStorage.getItem("pontuação");
+   pontuation_update = localStorage.getItem("pontuação");
   elementPunctuation.innerHTML = ` Sua pontuação: <span> ${pontuation_update}</span>`;
 }
 
@@ -94,7 +95,7 @@ function verificationNumber() {
   buttonCheck.addEventListener("click", event => {
     console.log(attempts, "tentativas");
     event.preventDefault();
-    let points = parseInt(localStorage.getItem("pontuação"));
+    points = parseInt(localStorage.getItem("pontuação"));
     console.log(points);
     if (inputValue.value == numSecret) {
       modal_Result.classList.add("activeModal");
@@ -158,6 +159,7 @@ generateNewNumber.addEventListener("click", () => {
   modalContainer.classList.remove("activeModal");
   modal_Result.classList.remove("activeModal");
   sugestionNumber.classList.add("hiddenMessage");
+  elementPunctuation.classList.remove('hiddenMessage')
   attempts = attempts * 3;
   numberAttempts.innerHTML = `Você tem ${attempts} tentativas 👍🏽`;
   buttonCheck.style.display = "block";
@@ -169,16 +171,13 @@ continue_at_this_level.addEventListener("click", () => {
   modal_Result.classList.remove("activeModal");
   buttonCheck.style.display = "block";
   sugestionNumber.classList.add("hiddenMessage");
+  elementPunctuation.classList.remove('hiddenMessage')
 
     if(level === 1) attempts = (attempts * 0) + 3;
    else if(level === 2) attempts = (attempts * 0) + 5;
    else if(level === 3) attempts = (attempts * 0) + 10;
 
   numberAttempts.innerHTML = `Você tem ${attempts} chances 👍🏽`;
-    
-  
- 
-
   numberSecret();
   verificationLevel(level);
   
@@ -202,3 +201,10 @@ function verificationLevel(level) {
     return numSecret;
   }
 }
+function hiddenMessagePontuation(){
+  if( parseInt(pontuation_update) === 0){
+    console.log(pontuation_update)
+    elementPunctuation.classList.add('hiddenMessage')
+  }
+}
+hiddenMessagePontuation()
