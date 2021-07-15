@@ -165,6 +165,16 @@ generateNewNumber.addEventListener("click", () => {
   buttonCheck.style.display = "block";
   numberSecret();
   clearInput();
+
+   if(pontuation_update === "NaN"){
+    points = pontuation_update.replace("NaN", 0)
+    elementPunctuation.innerHTML = ` Sua pontuação: <span>${(points)}</span>`;
+    localStorage.setItem("pontuação", `${points}`);
+  }
+  // else{
+  //   localStorage.setItem("pontuação", `${points}`);
+  //   elementPunctuation.innerHTML = ` Sua pontuação: <span>${(points)}</span>`;
+  // }
 });
 
 continue_at_this_level.addEventListener("click", () => {
@@ -206,5 +216,6 @@ function hiddenMessagePontuation(){
     console.log(pontuation_update)
     elementPunctuation.classList.add('hiddenMessage')
   }
+
 }
 hiddenMessagePontuation()
